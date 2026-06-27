@@ -1,0 +1,70 @@
+configuration {
+    modi: "drun,run";
+    show-icons: false;
+    display-drun: "APPS";
+    display-run: "RUN";
+    drun-display-format: "{name}";
+}
+
+* {
+    bg: #121212F2;      /* Solid Charcoal (0.95 opacity) */
+    fg: #E0E0E0;      /* Light Gray Text */
+    accent: #2A2A2A;  /* Slightly lighter Charcoal for selection */
+    border-col: #333333; /* Dark Gray border */
+    width: 600;
+}
+
+window {
+    background-color: @bg;
+    border: 1px;
+    border-color: @border-col;
+    border-radius: 0px; /* Sharp corners for minimalist look */
+    padding: 25;
+    location: center;
+    anchor: center;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    background-color: transparent;
+    text-color: @fg;
+    children: [ prompt, entry ];
+    padding: 0 0 15px 0;
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @fg;
+    font: "JetBrainsMono Nerd Font Bold 10";
+    margin: 0 15px 0 0;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg;
+    placeholder: "Search...";
+    placeholder-color: #454545;
+}
+
+listview {
+    background-color: transparent;
+    lines: 8;
+    spacing: 2;
+    fixed-height: false;
+    dynamic: true;
+}
+
+element {
+    background-color: transparent;
+    text-color: #888888; /* Dim inactive text */
+    padding: 8;
+}
+
+element selected {
+    background-color: @accent;
+    text-color: #ffffff; /* White active text */
+}
