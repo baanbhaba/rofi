@@ -1,9 +1,12 @@
 #!/bin/bash
+
 lock="󰌾  Lock"
 shutdown="  Shutdown"
 reboot="󰜉  Reboot"
 logout="󰈆  Logout"
-options="$shutdown\n$reboot\n$logout\n$lock"
+hibernate="󰒲  Hibernate"
+
+options="$hibernate\n$shutdown\n$reboot\n$logout\n$lock"
 
 chosen="$(echo -e "$options" | rofi -dmenu -i -p "Power Menu" -theme ~/.config/rofi/config.rasi)"
 
@@ -19,5 +22,8 @@ case "$chosen" in
         ;;
     $lock)
         pidof hyprlock >/dev/null || hyprlock
+        ;;
+    $hibernate)
+        ~/.local/bin/hibernate-lock.sh
         ;;
 esac
