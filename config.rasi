@@ -9,14 +9,14 @@ configuration {
 
 * {
     bg: #121212;          /* Strict Charcoal Background */
-    fg: #888888;          /* Muted Gray for inactive text */
-    highlight: #D4D4D4;   /* Muted White Selection Box */
-    text-selected: #121212; /* Dark Charcoal text when selected */
-    text-active: #ffffff;   /* White text for typing area */
+    fg: #ff4e00;          /* Muted Gray for inactive text */
+    highlight: #211b2c;   /* Muted White Selection Box */
+    text-selected: #ff4e00; /* Dark Charcoal text when selected */
+    text-active: #ff4e00;   /* White text for typing area */
 }
 
 window {
-    width: 700px;         /* Wide layout */
+    width: 700px;     
     background-color: @bg;
     border: 0px;
     padding: 25px;
@@ -43,7 +43,7 @@ prompt {
 entry {
     background-color: transparent;
     text-color: @text-active;
-    placeholder: "Search...";
+    placeholder: " ";
     placeholder-color: #444444;
 }
 
@@ -63,10 +63,10 @@ element {
 
 element selected {
     background-color: @highlight;   /* Muted White Box */
-    text-color: @text-selected;    /* Charcoal Text inside the White Box */
+    text-color: @text-active;    /* Charcoal Text inside the White Box */
 }
 
 element-text {
     background-color: transparent;
-    text-color: inherit;           /* Inherits Charcoal when selected */
+    text-color: @text-active;           /* Inherits Charcoal when selected */
 }
